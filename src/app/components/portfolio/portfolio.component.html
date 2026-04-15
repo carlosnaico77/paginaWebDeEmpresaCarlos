@@ -1,0 +1,20 @@
+<section id="proyectos" class="portfolio">
+  <div class="container">
+    <span class="section-tag">{{ 'PORTFOLIO.TAG' | translate }}</span>
+    <h2 class="section-title">{{ 'PORTFOLIO.TITLE' | translate }}</h2>
+    
+    <div class="portfolio-grid">
+      @for (project of projects; track project.title) {
+        <div class="project-card glass">
+          <div class="project-image" [style.background-image]="'url(' + project.image + ')'">
+            <div class="project-overlay">
+              <span class="project-category">{{ project.category | translate }}</span>
+              <h3 class="project-title">{{ project.title | translate }}</h3>
+              <a href="#" class="view-project">{{ 'PORTFOLIO.VIEW' | translate }} &rarr;</a>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

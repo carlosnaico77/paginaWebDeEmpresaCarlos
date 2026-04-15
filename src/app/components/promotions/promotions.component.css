@@ -1,0 +1,70 @@
+.promotions {
+  padding: 60px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+.promo-banner {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(167, 139, 250, 0.1));
+  border: 1px solid var(--primary);
+  padding: 60px;
+  border-radius: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.promo-content {
+  max-width: 600px;
+  z-index: 2;
+}
+
+.promo-badge {
+  background: var(--primary);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.promo-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.promo-description {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: 30px;
+}
+
+.promo-icon {
+  font-size: 8rem;
+  opacity: 0.2;
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .promo-banner {
+    padding: 40px 30px;
+    text-align: center;
+    flex-direction: column;
+  }
+  .promo-icon {
+    display: none;
+  }
+}

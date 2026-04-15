@@ -1,0 +1,140 @@
+.pricing {
+  padding: 120px 0;
+  background: radial-gradient(circle at bottom left, rgba(99, 102, 241, 0.05), transparent);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+.pricing-header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  align-items: center;
+}
+
+.pricing-card {
+  padding: 50px 40px;
+  border-radius: 32px;
+  text-align: center;
+  position: relative;
+  transition: var(--transition);
+}
+
+.pricing-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--primary);
+}
+
+.pricing-card.featured {
+  border: 2px solid var(--primary);
+  padding: 70px 40px;
+  background: rgba(99, 102, 241, 0.05);
+  box-shadow: 0 30px 60px rgba(99, 102, 241, 0.15);
+}
+
+.featured-badge {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary);
+  color: white;
+  padding: 6px 20px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.plan-header h3 {
+  font-size: 1.5rem;
+  margin-bottom: 24px;
+}
+
+.price {
+  margin-bottom: 16px;
+}
+
+.amount {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.currency {
+  font-size: 1.5rem;
+  font-weight: 700;
+  vertical-align: super;
+}
+
+.period {
+  color: var(--text-muted);
+}
+
+.plan-desc {
+  color: var(--text-muted);
+  margin-bottom: 40px;
+  font-size: 0.9rem;
+}
+
+.plan-features {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 50px;
+  text-align: left;
+}
+
+.plan-features li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.95rem;
+}
+
+.check {
+  width: 20px;
+  height: 20px;
+  background: rgba(16, 185, 129, 0.2);
+  border-radius: 50%;
+  position: relative;
+}
+
+.check::after {
+  content: '✓';
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #10b981;
+  font-size: 0.7rem;
+  font-weight: 900;
+}
+
+.btn-pricing {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  border-radius: 50px;
+  font-weight: 700;
+  transition: var(--transition);
+}
+
+@media (max-width: 992px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .pricing-card.featured {
+     padding: 50px 40px;
+  }
+}

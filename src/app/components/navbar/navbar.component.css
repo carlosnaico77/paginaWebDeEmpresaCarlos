@@ -1,0 +1,87 @@
+.navbar {
+  position: fixed;
+  top: 20px;
+  left: 5%;
+  right: 5%;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  z-index: 1000;
+  border-radius: 100px;
+  transition: var(--transition);
+}
+
+.navbar-active {
+  top: 0;
+  left: 0;
+  right: 0;
+  border-radius: 0;
+  background: rgba(10, 11, 16, 0.95);
+  border-bottom: 1px solid var(--border-glass);
+}
+
+.logo {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.logo-accent {
+  color: var(--primary);
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.nav-links a {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.nav-links a:hover {
+  color: var(--text-main);
+}
+
+.btn-nav {
+  background: var(--primary);
+  color: white !important;
+  padding: 10px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+}
+
+.lang-selector {
+  display: flex;
+  gap: 10px;
+}
+
+.lang-selector button {
+  background: none;
+  border: 1px solid var(--border-glass);
+  color: var(--text-muted);
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.lang-selector button.active {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: rgba(99, 102, 241, 0.1);
+}
+
+@media (max-width: 992px) {
+  .nav-links {
+    display: none;
+  }
+}

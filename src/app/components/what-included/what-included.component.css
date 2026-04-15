@@ -1,0 +1,60 @@
+.what-included {
+  padding: 80px 0;
+}
+
+.container-glass {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-glass);
+  backdrop-filter: blur(20px);
+  padding: 60px;
+  border-radius: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.included-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  margin-top: 50px;
+}
+
+.included-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.included-item p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+.icon-gift, .icon-shield, .icon-tool, .icon-support {
+  width: 48px;
+  height: 48px;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+.icon-gift::after { content: '🎁'; }
+.icon-shield::after { content: '🛡️'; }
+.icon-tool::after { content: '🛠️'; }
+.icon-support::after { content: '🎧'; }
+
+@media (max-width: 768px) {
+  .included-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .container-glass {
+    padding: 40px 20px;
+    border-radius: 20px;
+  }
+}

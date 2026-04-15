@@ -1,0 +1,20 @@
+<section class="order-form">
+  <div class="container glass" data-aos="fade-up">
+    <div class="order-header">
+      <h2 class="section-title text-center">{{ 'ORDER.TITLE' | translate }}</h2>
+      <p class="section-description text-center">{{ 'ORDER.DESC' | translate }}</p>
+    </div>
+    
+    <form class="custom-form" (submit)="onOrderSubmit($event)">
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="order-desc">{{ 'ORDER.L_DESC' | translate }}</label>
+          <textarea id="order-desc" name="order-desc" rows="6" [placeholder]="'ORDER.L_DESC' | translate" required></textarea>
+        </div>
+      </div>
+      <div class="form-footer">
+        <button type="submit" class="btn-primary btn-large">{{ 'ORDER.CTA_REQUEST' | translate }}</button>
+      </div>
+    </form>
+  </div>
+</section>

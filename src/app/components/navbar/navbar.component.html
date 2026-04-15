@@ -1,0 +1,18 @@
+<nav class="navbar glass" [class.navbar-active]="isScrolled()">
+  <div class="logo">
+    <span class="logo-accent">Digital</span>Agency
+  </div>
+  
+  <ul class="nav-links">
+    <li><a href="#inicio">{{ 'NAV.HOME' | translate }}</a></li>
+    <li><a href="#quienes-somos">{{ 'NAV.ABOUT' | translate }}</a></li>
+    <li><a href="#servicios">{{ 'NAV.SERVICES' | translate }}</a></li>
+    <li><a href="#proyectos">{{ 'NAV.RESULTS' | translate }}</a></li>
+    <li><a href="#contacto" class="btn-nav">{{ 'NAV.CONTACT' | translate }}</a></li>
+  </ul>
+
+  <div class="lang-selector">
+    <button (click)="setLang('es')" [class.active]="currentLang() === 'es'">ES</button>
+    <button (click)="setLang('en')" [class.active]="currentLang() === 'en'">EN</button>
+  </div>
+</nav>

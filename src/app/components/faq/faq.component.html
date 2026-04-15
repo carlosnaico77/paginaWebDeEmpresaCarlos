@@ -1,0 +1,21 @@
+<section class="faq">
+  <div class="container">
+    <div class="faq-header" data-aos="fade-up">
+      <h2 class="section-title text-center">{{ 'FAQ.TITLE' | translate }}</h2>
+    </div>
+    
+    <div class="faq-list">
+      @for (item of faqs; track item.id) {
+        <div class="faq-item glass" [class.active]="activeFaq() === item.id" (click)="toggleFaq(item.id)">
+          <div class="faq-question">
+            <h3>{{ 'FAQ.' + item.id | translate }}</h3>
+            <span class="faq-toggle"></span>
+          </div>
+          <div class="faq-answer">
+            <p>{{ 'FAQ.' + item.answerId | translate }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

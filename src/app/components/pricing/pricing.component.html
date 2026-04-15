@@ -1,0 +1,37 @@
+<section id="precios" class="pricing">
+  <div class="container">
+    <div class="pricing-header" data-aos="fade-up">
+      <span class="section-tag">{{ 'PRICING.TAG' | translate }}</span>
+      <h2 class="section-title">{{ 'PRICING.TITLE' | translate }}</h2>
+    </div>
+    
+    <div class="pricing-grid">
+      @for (plan of plans; track plan.id) {
+        <div class="pricing-card glass" [class.featured]="plan.featured" data-aos="fade-up">
+          @if (plan.featured) {
+            <span class="featured-badge">Más Popular</span>
+          }
+          <div class="plan-header">
+            <h3>{{ 'PRICING.' + plan.id + '.NAME' | translate }}</h3>
+            <div class="price">
+              <span class="currency">$</span>
+              <span class="amount">{{ 'PRICING.' + plan.id + '.PRICE' | translate }}</span>
+              <span class="period">/proy</span>
+            </div>
+            <p class="plan-desc">{{ 'PRICING.' + plan.id + '.DESC' | translate }}</p>
+          </div>
+          
+          <ul class="plan-features">
+            <li><span class="check"></span> {{ 'PRICING.' + plan.id + '.F1' | translate }}</li>
+            <li><span class="check"></span> {{ 'PRICING.' + plan.id + '.F2' | translate }}</li>
+            <li><span class="check"></span> {{ 'PRICING.' + plan.id + '.F3' | translate }}</li>
+          </ul>
+          
+          <a href="#contacto" class="btn-pricing" [class.btn-primary]="plan.featured" [class.btn-secondary]="!plan.featured">
+            {{ 'PRICING.CTA' | translate }}
+          </a>
+        </div>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,22 @@
+<section class="reviews">
+  <div class="container">
+    <div class="reviews-header" data-aos="fade-up">
+      <h2 class="section-title text-center">{{ 'REVIEWS.TITLE' | translate }}</h2>
+    </div>
+    
+    <div class="reviews-grid">
+      @for (review of clientReviews; track review.id) {
+        <div class="review-card glass" data-aos="fade-up">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p class="review-text">"{{ 'REVIEWS.' + review.id + '.TEXT' | translate }}"</p>
+          <div class="review-author">
+             <div class="author-info">
+               <span class="author-name">{{ 'REVIEWS.' + review.id + '.NAME' | translate }}</span>
+               <span class="author-role">{{ 'REVIEWS.' + review.id + '.ROLE' | translate }}</span>
+             </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

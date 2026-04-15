@@ -1,0 +1,21 @@
+<section class="services-detail">
+  <div class="container">
+    <div class="detail-header" data-aos="fade-up">
+      <span class="section-tag">{{ 'SERVICES_DETAIL.TAG' | translate }}</span>
+      <h2 class="section-title">{{ 'SERVICES.TITLE' | translate }}</h2>
+    </div>
+    
+    <div class="detail-grid">
+      @for (item of detailedServices; track item.id) {
+        <div class="detail-card glass" data-aos="fade-up">
+          <div class="detail-icon" [style.background]="item.color"></div>
+          <div class="detail-info">
+            <h3>{{ 'SERVICES_DETAIL.' + item.id + '.TITLE' | translate }}</h3>
+            <p>{{ 'SERVICES_DETAIL.' + item.id + '.DESC' | translate }}</p>
+            <a href="#contacto" class="btn-text">{{ 'SERVICES_DETAIL.CTA' | translate }} &rarr;</a>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

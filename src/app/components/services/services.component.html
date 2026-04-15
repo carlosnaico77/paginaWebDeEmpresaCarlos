@@ -1,0 +1,23 @@
+<section id="servicios" class="services">
+  <div class="container">
+    <span class="section-tag">{{ 'SERVICES.TAG' | translate }}</span>
+    <h2 class="section-title">{{ 'SERVICES.TITLE' | translate }}</h2>
+    
+    <div class="services-grid">
+      @for (service of services; track service.title) {
+        <div class="service-card glass" data-aos="fade-up">
+          <div class="service-icon" [style.background]="service.color">
+            <span class="icon-placeholder"></span>
+          </div>
+          <h3 class="service-card-title">{{ service.title | translate }}</h3>
+          <p class="service-card-description">{{ service.description | translate }}</p>
+          <ul class="service-features">
+            @for (feature of service.features; track feature) {
+              <li><span class="bullet"></span> {{ feature | translate }}</li>
+            }
+          </ul>
+        </div>
+      }
+    </div>
+  </div>
+</section>

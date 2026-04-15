@@ -1,0 +1,28 @@
+<div class="chat-wrapper">
+  @if (isOpen()) {
+    <div class="chat-window glass" data-aos="fade-up">
+      <div class="chat-header">
+        <div class="header-info">
+          <span class="online-indicator"></span>
+          <h3>Digital Agency</h3>
+        </div>
+        <button class="close-btn" (click)="toggleChat()">&times;</button>
+      </div>
+      
+      <div class="chat-body">
+        <div class="message system">
+          {{ 'CHAT.WELCOME' | translate }}
+        </div>
+      </div>
+      
+      <div class="chat-footer">
+        <input type="text" [placeholder]="'CHAT.PLACEHOLDER' | translate" (keyup.enter)="sendMessage($event)">
+        <button class="send-btn">{{ 'CHAT.SEND' | translate }}</button>
+      </div>
+    </div>
+  }
+  
+  <button class="chat-bubble-btn" (click)="toggleChat()" [class.active]="isOpen()" data-aos="zoom-in">
+    <span class="chat-icon">💬</span>
+  </button>
+</div>
