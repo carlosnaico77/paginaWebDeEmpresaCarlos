@@ -1,5 +1,6 @@
 import { Component, inject, signal, HostListener } from '@angular/core';
 import { TranslationService } from '../../services/translation.service';
+import { ThemeService } from '../../services/theme.service';
 import { TranslatePipe } from '../../pipes/translate.pipe';
 
 @Component({
@@ -11,12 +12,13 @@ import { TranslatePipe } from '../../pipes/translate.pipe';
 })
 export class NavbarComponent {
   private translationService = inject(TranslationService);
+  private themeService = inject(ThemeService);
   
-  // Signal para detectar si el usuario ha hecho scroll
   protected readonly isScrolled = signal(false);
+  protected readonly isMenuOpen = signal(false);
   
-  // Selector del idioma actual
   protected readonly currentLang = this.translationService.lang;
+  protected readonly currentTheme = this.themeService.currentTheme;
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
@@ -25,5 +27,13 @@ export class NavbarComponent {
 
   setLang(lang: 'es' | 'en') {
     this.translationService.switchLanguage(lang);
+  }
+
+  toggleTheme() {
+    this.themeService.toggleTheme();
+  }
+
+  toggleMenu() {
+    this.isMenuOpen.update(val => !val);
   }
 }

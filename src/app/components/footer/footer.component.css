@@ -1,5 +1,5 @@
 .footer {
-  background: var(--bg-dark);
+  background: var(--bg-surface);
   padding: 100px 5% 40px;
   border-top: 1px solid var(--border-glass);
 }
@@ -15,21 +15,35 @@
   max-width: 400px;
 }
 
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.logo-accent {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .brand-tagline {
   color: var(--text-muted);
   margin-top: 20px;
   line-height: 1.6;
+  font-size: 1rem;
 }
 
 .footer-links {
   display: flex;
-  gap: 80px;
+  gap: clamp(40px, 8vw, 80px);
 }
 
 .link-group h4 {
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 700;
   margin-bottom: 24px;
+  color: var(--text-main);
 }
 
 .link-group ul {
@@ -40,11 +54,13 @@
 
 .link-group a {
   color: var(--text-muted);
+  font-size: 0.95rem;
   transition: var(--transition);
 }
 
 .link-group a:hover {
   color: var(--primary);
+  padding-left: 5px;
 }
 
 .footer-bottom {
@@ -56,10 +72,27 @@
 }
 
 @media (max-width: 992px) {
+  .footer {
+    padding: 80px 5% 40px;
+  }
+  
   .footer-top {
     flex-direction: column;
+    text-align: center;
+    gap: 50px;
+    align-items: center;
   }
+
   .footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px 60px;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-links {
+    flex-direction: column;
     gap: 40px;
   }
 }

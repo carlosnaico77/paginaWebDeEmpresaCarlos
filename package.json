@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:paginaWeb": "node dist/paginaWeb/server/server.mjs"
+    "serve:ssr:paginaWeb": "node dist/paginaWeb/server/server.mjs",
+    "tunel":"cloudflared tunnel --url http://localhost:4200"
   },
   "private": true,
   "packageManager": "npm@11.9.0",
@@ -20,6 +21,7 @@
     "@angular/platform-server": "^21.2.0",
     "@angular/router": "^21.2.0",
     "@angular/ssr": "^21.2.7",
+    "cloudflared": "^0.7.1",
     "express": "^5.1.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"

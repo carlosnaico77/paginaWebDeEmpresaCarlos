@@ -1,18 +1,34 @@
-<nav class="navbar glass" [class.navbar-active]="isScrolled()">
+<nav class="navbar glass" [class.navbar-active]="isScrolled()" [class.menu-open]="isMenuOpen()">
   <div class="logo">
     <span class="logo-accent">Digital</span>Agency
   </div>
   
-  <ul class="nav-links">
-    <li><a href="#inicio">{{ 'NAV.HOME' | translate }}</a></li>
-    <li><a href="#quienes-somos">{{ 'NAV.ABOUT' | translate }}</a></li>
-    <li><a href="#servicios">{{ 'NAV.SERVICES' | translate }}</a></li>
-    <li><a href="#proyectos">{{ 'NAV.RESULTS' | translate }}</a></li>
-    <li><a href="#contacto" class="btn-nav">{{ 'NAV.CONTACT' | translate }}</a></li>
-  </ul>
+  <div class="nav-controls">
+    <ul class="nav-links" [class.show]="isMenuOpen()">
+      <li><a href="#inicio" (click)="toggleMenu()">{{ 'NAV.HOME' | translate }}</a></li>
+      <li><a href="#quienes-somos" (click)="toggleMenu()">{{ 'NAV.ABOUT' | translate }}</a></li>
+      <li><a href="#servicios" (click)="toggleMenu()">{{ 'NAV.SERVICES' | translate }}</a></li>
+      <li><a href="#proyectos" (click)="toggleMenu()">{{ 'NAV.RESULTS' | translate }}</a></li>
+      <li><a href="#contacto" class="btn-nav" (click)="toggleMenu()">{{ 'NAV.CONTACT' | translate }}</a></li>
+    </ul>
 
-  <div class="lang-selector">
-    <button (click)="setLang('es')" [class.active]="currentLang() === 'es'">ES</button>
-    <button (click)="setLang('en')" [class.active]="currentLang() === 'en'">EN</button>
+    <div class="actions">
+      <button class="theme-toggle" (click)="toggleTheme()" aria-label="Toggle Theme">
+        @if (currentTheme() === 'dark') {
+          <span class="p-icon">☀️</span>
+        } @else {
+          <span class="p-icon">🌙</span>
+        }
+      </button>
+
+      <div class="lang-selector">
+        <button (click)="setLang('es')" [class.active]="currentLang() === 'es'">ES</button>
+        <button (click)="setLang('en')" [class.active]="currentLang() === 'en'">EN</button>
+      </div>
+
+      <button class="menu-toggle" (click)="toggleMenu()" aria-label="Toggle Menu">
+        <div class="hamburger"></div>
+      </button>
+    </div>
   </div>
 </nav>

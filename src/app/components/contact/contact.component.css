@@ -1,14 +1,18 @@
 .contact {
   padding: 120px 5%;
+  background: var(--bg-surface);
 }
 
 .container {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 60px;
+  padding: clamp(30px, 5vw, 60px);
   display: grid;
   grid-template-columns: 1fr 1.2fr;
   gap: 60px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  border-radius: 32px;
 }
 
 .contact-header {
@@ -20,35 +24,38 @@
 .section-description {
   color: var(--text-muted);
   margin-top: 20px;
+  font-size: 1.1rem;
 }
 
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 24px;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
 .form-group label {
-  font-size: 0.85rem;
-  font-weight: 500;
+  font-size: 0.9rem;
+  font-weight: 600;
   color: var(--text-main);
+  margin-left: 4px;
 }
 
 .form-group input, 
 .form-group select, 
 .form-group textarea {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--bg-surface);
   border: 1px solid var(--border-glass);
-  border-radius: 12px;
-  padding: 12px 16px;
+  border-radius: 16px;
+  padding: 16px 20px;
   color: var(--text-main);
   font-family: inherit;
+  font-size: 1rem;
   transition: var(--transition);
 }
 
@@ -57,12 +64,28 @@
 .form-group textarea:focus {
   outline: none;
   border-color: var(--primary);
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--bg-surface);
+  box-shadow: 0 0 0 4px var(--primary-glow);
 }
 
 @media (max-width: 992px) {
+  .contact {
+    padding: 80px 5%;
+  }
+
   .container {
     grid-template-columns: 1fr;
-    padding: 40px 30px;
+    gap: 40px;
+    padding: 40px 24px;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-header {
+    text-align: center;
+  }
+  
+  .btn-primary {
+    width: 100%;
   }
 }

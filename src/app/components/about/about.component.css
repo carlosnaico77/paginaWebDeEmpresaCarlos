@@ -1,6 +1,7 @@
 .about {
   padding: 120px 0;
   overflow: hidden;
+  background: var(--bg-surface);
 }
 
 .container {
@@ -22,45 +23,51 @@
 
 .image-wrapper {
   position: relative;
-  border-radius: 24px;
+  border-radius: 32px;
   overflow: hidden;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+  box-shadow: 0 40px 80px -20px rgba(0,0,0,0.3);
+  background: var(--bg-dark);
 }
 
 .image-wrapper img {
   width: 100%;
   display: block;
-  transition: transform 0.5s;
+  transition: transform 0.8s cubic-bezier(0.2, 0, 0.2, 1);
+  opacity: 0.9;
 }
 
 .image-wrapper:hover img {
-  transform: scale(1.05);
+  transform: scale(1.1);
+  opacity: 1;
 }
 
 .experience-badge {
   position: absolute;
-  bottom: 30px;
-  right: -30px;
+  bottom: 20px;
+  right: -20px;
   background: var(--primary);
-  padding: 20px 30px;
-  border-radius: 16px;
+  padding: 24px 32px;
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 0 10px 30px var(--primary-glow);
+  box-shadow: 0 15px 40px var(--primary-glow);
+  color: white;
+  z-index: 10;
 }
 
 .badge-num {
-  font-size: 2rem;
+  font-size: 2.22rem;
   font-weight: 800;
   line-height: 1;
 }
 
 .badge-text {
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
+  opacity: 0.9;
 }
 
 .about-content .section-tag {
@@ -73,12 +80,13 @@
 
 .about-content .section-description {
   margin-bottom: 40px;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
+  color: var(--text-muted);
 }
 
 .about-stats {
   display: flex;
-  gap: 60px;
+  gap: clamp(20px, 5vw, 60px);
   margin-bottom: 50px;
 }
 
@@ -88,7 +96,7 @@
 }
 
 .stat-num {
-  font-size: 2.5rem;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
   font-weight: 800;
   color: var(--primary);
   line-height: 1;
@@ -97,11 +105,15 @@
 .stat-label {
   font-size: 0.9rem;
   color: var(--text-muted);
-  font-weight: 500;
+  font-weight: 600;
   margin-top: 8px;
 }
 
 @media (max-width: 992px) {
+  .about {
+    padding: 80px 0;
+  }
+  
   .about-grid {
     grid-template-columns: 1fr;
     gap: 60px;
@@ -112,6 +124,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    order: 1;
+  }
+
+  .about-image {
+    order: 2;
+    max-width: 500px;
+    margin: 0 auto;
   }
   
   .about-stats {
@@ -119,7 +138,22 @@
   }
   
   .experience-badge {
-    right: 20px;
-    bottom: 20px;
+    right: -10px;
+    bottom: -10px;
+    padding: 16px 24px;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-stats {
+    gap: 30px;
+  }
+  
+  .experience-badge {
+    position: relative;
+    right: 0;
+    bottom: 0;
+    margin: -30px auto 0;
+    width: fit-content;
   }
 }

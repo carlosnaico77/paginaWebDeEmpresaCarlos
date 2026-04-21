@@ -1,5 +1,6 @@
 .portfolio {
   padding: 120px 0;
+  background: var(--bg-surface);
 }
 
 .container {
@@ -10,7 +11,7 @@
 
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 30px;
   margin-top: 60px;
 }
@@ -19,6 +20,10 @@
   height: 400px;
   overflow: hidden;
   cursor: pointer;
+  border-radius: 24px;
+  position: relative;
+  background: var(--bg-dark);
+  border: 1px solid var(--border-glass);
 }
 
 .project-image {
@@ -26,52 +31,73 @@
   height: 100%;
   background-size: cover;
   background-position: center;
-  transition: var(--transition);
-  position: relative;
+  transition: transform 0.8s cubic-bezier(0.2, 0, 0.2, 1);
 }
 
 .project-card:hover .project-image {
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
 .project-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 70%);
   padding: 30px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  opacity: 0.9;
+  opacity: 1;
   transition: var(--transition);
 }
 
 .project-card:hover .project-overlay {
-  opacity: 1;
   background: linear-gradient(to top, var(--primary) 0%, transparent 100%);
 }
 
 .project-category {
   font-size: 0.8rem;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--text-muted);
+  letter-spacing: 0.15em;
+  color: #fff;
+  opacity: 0.7;
   margin-bottom: 8px;
+  font-weight: 600;
 }
 
 .project-title {
   font-size: 1.5rem;
   margin-bottom: 16px;
+  color: #fff;
+  font-weight: 700;
 }
 
 .view-project {
   font-size: 0.9rem;
   font-weight: 600;
   color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Tablet & Mobile */
+@media (max-width: 992px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
 }
 
 @media (max-width: 768px) {
+  .portfolio {
+    padding: 80px 0;
+  }
+  
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+  
   .project-card {
-    height: 300px;
+    height: 350px;
   }
 }
